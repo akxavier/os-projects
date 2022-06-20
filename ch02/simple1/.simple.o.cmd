@@ -677,6 +677,9 @@ deps_/home/aadharsh/Documents/operating-system-concepts/ch02/simple1/simple.o :=
     $(wildcard include/config/modules/use/elf/rel.h) \
     $(wildcard include/config/modules/use/elf/rela.h) \
   arch/x86/include/asm/orc_types.h \
+  include/linux/hash.h \
+    $(wildcard include/config/have/arch/hash.h) \
+  include/linux/gcd.h \
 
 /home/aadharsh/Documents/operating-system-concepts/ch02/simple1/simple.o: $(deps_/home/aadharsh/Documents/operating-system-concepts/ch02/simple1/simple.o)
 
