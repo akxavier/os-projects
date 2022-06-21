@@ -28,7 +28,11 @@ void proc_exit(void) {
 	remove_proc_entry(PROC_NAME, NULL);
 }
 
-/* This function is called each time /proc/hello is read */
+/* This function is called each time /proc/hello is read 
+ * The string "Hello World\n" is written to the variable buffer which exists in kernel memory.
+ * Contents of the kernel buffer are copied to the variable usr_buf which exists in user space using the kernel function raw_copy_to_user().
+ * Each time /proc/hello is read, proc_read() function is called repeatedly until it returns 0
+ */
 ssize_t proc_read(struct file *file, char *usr_buf, size_t count, loff_t *pos) {
 	int rv = 0;
 	char buffer[BUFFER_SIZE];
